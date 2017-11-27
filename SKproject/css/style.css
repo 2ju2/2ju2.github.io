@@ -87,7 +87,7 @@ a.blog-thumb img{width:100%}
 .conbox.map .mtit_area ul li + li:after{content:''; display: block; width: 1px; height: 10px; background: gray; position: absolute; top: 6px; left: -15px;}
 .conbox.map .map-tab{position:relative; }
 .conbox.map .tab-content{height:616px; overflow:hidden; overflow-x:scroll; position:relative;}
-.conbox.map .map-img{width:1020px; height:616px; position:absolute; top:0; background: url('img/main/img_globalmap.png') no-repeat; }
+.conbox.map .map-img{width:1020px; height:616px; position:absolute; top:0; background: url('../img/main/img_globalmap.png') no-repeat; }
 .conbox.map .tab-content>.tab-pane{position:absolute; top:0}
 .conbox.map .map-menu{position:absolute; bottom:40px; width:100%; padding:0 30px}
 .conbox.map .map-menu ul{background:#f4f4f4}
