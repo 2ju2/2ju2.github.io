@@ -1,0 +1,133 @@
+@charset "utf-8";
+
+/* Base Style Definition */
+* {max-height: 1000000px; -webkit-text-size-adjus:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+html {position:relative; width:100%; height:100%; overflow-y:scroll}
+body {position:relative; width:100%; height:100%; margin:0; padding:0; *word-break:break-all; -ms-word-break:break-all}
+header, footer, section, article, figure, div, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, input, button, table, th, td, img, a {margin:0; padding:0;}
+ul, ol {list-style:none;}
+button {border:0 none; background:transparent; cursor:pointer; *overflow:visible}
+button::-moz-focus-inner {border:0; padding:0} /* firefox fix */
+header, footer, section, article, figure, form, fieldset {display:block}
+hr, form, fieldset, img {border:0 none}
+hr {display:none}
+textarea {overflow:auto}
+caption, figcaption {display:none} 
+em, address {font-style:normal}
+label {cursor:pointer}
+legend {position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;} /* for screen reader */
+:focus {outline:0 none}
+a {background:none;}
+
+/* COMMON */
+/* ======================================================================================== */
+body, input, select, textarea{font-size:13px; font-family:Malgun Gothic, "맑은 고딕", Dotum, "돋움", sans-serif;}
+.mt30{margin-top:30px}
+.pt36{padding-top:36px}
+.ico{background:url(../_img/main_icon.png) no-repeat left top; display:inline-block;}
+a{color:#333; text-decoration:none}
+.thumbnail{border:none; background:none;}
+
+/* Main */
+/* ======================================================================================== */
+main> .conbox{padding:61px 0 70px;}
+main> .conbox:nth-child(even){background:#f9f7f7}
+.mtit_area{border-bottom:1px solid #eaeaea; padding-bottom:36px; text-align:center}
+.mtit_area.noline{border:none;}
+.mtit_area h2{font-weight: bold; font-size: 26px; line-height: 30px; color: #333; letter-spacing: 0.025em; font-family: "Roboto", Malgun Gothic, "맑은 고딕", Dotum, "돋움", sans-serif;}
+.mtit_area p{margin-top: 21px; line-height: 24px; letter-spacing: -0.05em; color: #666;}
+
+/*Quick Link*/
+.qlink{background:#990000; padding-bottom:8px;}
+.qlink a{color:#fff;}
+.qlink strong{display:block; font-size:12px;}
+.qlink a .ico{width:34px; height:31px; }
+.qlink .ico_ql01{background-position:0 -301px}
+.qlink .ico_ql02{background-position:-39px -301px}
+.qlink .ico_ql03{background-position:-78px -301px}
+.qlink .ico_ql04{background-position:-117px -301px}
+
+/* Investor Relations */
+.conbox.invest .ir_graph{padding: 30px 20px 6px; border-right: 1px solid #ececec; text-align: center;}
+.conbox.invest .ic_link>div:nth-child(4), .ic_link>div:nth-child(5), .ic_link>div:nth-child(6){margin-top:32px;}
+.conbox.invest .ico{width:60px; height:60px}
+.conbox.invest .ico_ir02{background-position:-65px 0;}
+.conbox.invest .ico_ir03{background-position:-130px 0;}
+.conbox.invest .ico_ir04{background-position:0 -65px;}
+.conbox.invest .ico_ir05{background-position:-65px -65px;}
+.conbox.invest .ico_ir06{background-position:-130px -65px;}
+
+/* Corporate Social Responsibility */
+.conbox.manage .ico{width:73px; height:73px}
+.conbox.manage .ico.icon01{background-position:0 -145px}
+.conbox.manage .ico.icon02{background-position:-83px -145px}
+.conbox.manage .ico.icon03{background-position:-166px -145px}
+.conbox.manage .ico.icon04{background-position:0 -223px}
+.conbox.manage .ico.icon05{background-position:-83px -223px}
+.conbox.manage .ico.icon06{background-position:-166px -223px}
+.conbox.manage .media h5{font-weight:bold; font-size:14px; line-height:24px; color:#222}
+.conbox.manage .media p{font-size:12px; line-height:20px; margin-top:3px; color:#666}
+.conbox.manage .con_area a:hover, .conbox.manage .con_area a:focus{text-decoration:none}
+.conbox.manage .con_area a:hover h5, .conbox.manage .con_area a:focus h5{text-decoration:underline}
+
+/* Products */
+.conbox.product .row a{display:inline-block;}
+.conbox.product .row a img{max-width:100%;}
+
+/* Blog */
+a.blog-thumb{display:inline-block; position:relative; width:100%}
+a.blog-thumb .caption{position:absolute; bottom:0; width:100%; height:40px; background:rgba(0,0,0,0.6); padding:10px 10px 13px 10px; color:#fff;}
+a.blog-thumb .caption h5{height:24px; width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+a.blog-thumb img{width:100%}
+
+/* Global Network */
+.conbox.map .mtit_area ul{margin-top:30px;}
+.conbox.map .mtit_area ul li{display:inline-block;  position:relative; font-weight:bold}
+.conbox.map .mtit_area ul li + li{margin-left:30px;} 
+.conbox.map .mtit_area ul li + li:after{content:''; display: block; width: 1px; height: 10px; background: gray; position: absolute; top: 6px; left: -15px;}
+.conbox.map .map-tab{position:relative; }
+.conbox.map .tab-content{height:616px; overflow:hidden; overflow-x:scroll; position:relative;}
+.conbox.map .map-img{width:1020px; height:616px; position:absolute; top:0; background: url('http://www.skhynix.com/resource/images/kor/about/img_globalmap.png') no-repeat; }
+.conbox.map .tab-content>.tab-pane{position:absolute; top:0}
+.conbox.map .map-menu{position:absolute; bottom:40px; width:100%; padding:0 30px}
+.conbox.map .map-menu ul{background:#f4f4f4}
+.conbox.map .map-menu ul li{display:inline-block; float:none;}
+
+
+/* shortcut */
+.shortcut{background:#e9e9e9;}
+
+/* Footer */
+.footer{background:#818181;}
+
+
+
+
+
+
+
+/*	MEDIA QUERY */
+/* ======================================================================================== */
+
+/* 큰 데스크탑 */
+@media (min-width: 1200px) {
+}
+
+/* 세로 방향 타블렛 ~ 가로 방향 타블렛과 데스크탑까지 */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+
+/* 가로 방향 전화기 ~ 세로 방향 타블렛까지 */
+@media (max-width: 767px){
+	.mtit_area p span{display:block;}
+	.col-sm-4+.col-sm-4{margin-top:20px;}
+	.conbox.map .map-menu ul{background:none;}
+	.conbox.map .map-menu ul li{display:block; width:130px; height:24px; background:#f4f4f4; margin-bottom:5px;}
+	.conbox.map .map-menu ul li a{padding:0 0 0 20px; height:24px; line-height:24px; text-align:left;}
+}
+
+/* 가로 방향 전화기 이하 */
+@media (max-width: 480px){
+	.conbox.manage .row>div{float:none; width:100%;}
+}
