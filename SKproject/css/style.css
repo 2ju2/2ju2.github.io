@@ -24,7 +24,7 @@ a {background:none;}
 body, input, select, textarea{font-size:13px; font-family:Malgun Gothic, "¸¼Àº °íµñ", Dotum, "µ¸¿ò", sans-serif;}
 .mt30{margin-top:30px}
 .pt36{padding-top:36px}
-.ico{background:url(../_img/main_icon.png) no-repeat left top; display:inline-block;}
+.ico{background:url(../img/main_icon.png) no-repeat left top; display:inline-block;}
 a{color:#333; text-decoration:none}
 .thumbnail{border:none; background:none;}
 
