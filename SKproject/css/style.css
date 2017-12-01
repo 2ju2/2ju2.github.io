@@ -25,8 +25,72 @@ body, input, select, textarea{font-size:13px; font-family:Malgun Gothic, "¸¼Àº °
 .mt30{margin-top:30px}
 .pt36{padding-top:36px}
 .ico{background:url(../img/main/main_icon.png) no-repeat left top; display:inline-block;}
+.ico_btn{border:solid 1px #c6c6c6; min-height:29px; padding:7px 35px 6px 10px; background:#fff}
 a{color:#333; text-decoration:none}
 .thumbnail{border:none; background:none;}
+
+/* NAV */
+header.main_header{position:fixed; z-index:10; width:100%; background:#fff}
+.header_inner{padding-top:20px; position:relative; width:1020px; margin:0 auto}
+.header_inner h1{width:100px; font-size:20px; display:inline-block; float:left; margin-top:-10px}
+.header_inner h1 a{display:block}
+.gnb_menu{position:relative;}
+.pc_menu{display:inline-block}
+.pc_menu > ul > li{display:inline-block; }
+.pc_menu > ul > li > a{display:block; height:70px; padding:17px 29px 0 28px; font-weight: bold; font-size: 15px; letter-spacing: 0.025em;}
+.pc_menu > ul > li.active > a{color:orange}
+.subDepth{position:absolute; padding:15px 0 16px; top:70px; left:0; width:100%; display:none;}
+.subDepth > div{padding:15px 0; margin:0 15px;}
+.subDepth > div > div{position:relative; height:228px; padding-left:180px;  margin:0 auto}
+.subTitle{position:absolute; left:20px; top:0;}
+.depth_list{height:168px; margin-bottom:14px;}
+.depth_list > li{float:left; width:202px; height:168px; position:relative; padding:0 8px; }
+.depth_list > li + li{border-left:solid 1px #ccc;}
+.depth_list > li > strong{display:block}
+.contact_btn{position:absolute; left:20px; bottom:0; }
+.contact_btn a{padding:10px; background:#ccc; display:inline-block;}
+.quick_btn li{float:left; width:201px; padding:0 8px; text-align:center}
+.etcnavi{float:right; margin-top:8px}
+.etcnavi li{display:inline-block}
+.etcnavi li + li{margin-left:17px}
+.etcnavi li a{height: 39px; display: inline-block; background-image:url(../img/gnb/tnavi01_off.png); background-repeat:no-repeat; background-position:center 0; padding-top: 19px;}
+.etcnavi li:nth-child(1).on a{background-image:url(../img/gnb/tnavi01_on.png);}
+.etcnavi li:nth-child(2) a{background-image:url(../img/gnb/tnavi02_off.png);}
+.etcnavi li:nth-child(3) a{background-image:url(../img/gnb/tnavi03_off.png);}
+
+.mb_back{position:fixed; background:rgba(0,0,0,0.5); width:100%; height:100%; z-index:11; display:none}
+.mb_header{position: fixed; background: #fff; width: 100%; height: 50px; padding:15px; z-index: 12; border-bottom: 1px solid #ea5d4b;}
+.mb_header .mb_menu_btn, .mb_header .mb_logo, .mb_header .mb_lang, .mb_header .mb_sch{background-image:url(../img/gnb/mobile_icon.png); background-repeat:no-repeat; background-size:200px 100px;}
+.mb_header .mb_menu_btn{display:inline-block; width:18px; height:20px; background-position:0 -37px; margin-right:13px;}
+.mb_header .mb_logo{display:inline-block; width:60px; height:30px; margin-top:-7px;}
+.mb_header > ul{margin-top:-5px}
+.mb_header .mb_lang{display:inline-block; width:35px; height:35px; background-position:-22px -32px;}
+.mb_header .mb_sch{display:inline-block; width:35px; height:35px; background-position:-52px -32px}
+.m_menu{position:fixed; top:51px; left:-100%; background:#494a4d; width:100%; height:100%; margin-left:-20px; overflow-y:auto; z-index:12}
+.m_menu > div{padding-left:20px;}
+.m_menu_list li{position:relative; border-top:1px solid #575759; }
+.m_menu_list li ul{display:none}
+.m_menu_list li a{color: #fff; line-height: 40px; padding:5px 20px; display: block;}
+.m_menu_list li span{position:absolute; top:16px; right:21px; display:inline-block; width:14px; height:14px; background-image:url(../img/gnb/mobile_icon.png); background-repeat:no-repeat; background-size:200px 100px;}
+.m_menu_list li.on > a{color:orange}
+
+/* background-size:200 100 ¸ð¾ß? */
+
+.m_menu_list > li{font-size:17px; font-weight:bold;}
+.m_menu_list > li:first-child{border-top:none;}
+.m_menu_list > li span{background-position: -88px 0; }
+.m_menu_list > li.on span{background-position:-102px 0;}
+
+.m_menu_list > li > ul{background:#3c3d40}
+.m_menu_list > li > ul > li{font-size:14px; font-weight:bold}
+.m_menu_list > li > ul > li > a{padding-left:30px;}
+.m_menu_list > li > ul > li span{background-position:-116px 0; width:11px; height:11px; }
+.m_menu_list > li > ul > li.on span{background-position:-127px 0;}
+
+.m_menu_list > li > ul > li > ul{background:#2f3032}
+.m_menu_list > li > ul > li > ul > li > a{padding-left:40px; }
+.m_menu_list > li > ul > li > ul > li span{background-position: -138px 0; top:23px; left:30px; width:7px; height:7px; }
+
 
 /* Main */
 /* ======================================================================================== */
@@ -48,7 +112,7 @@ main> .conbox:nth-child(even){background:#f9f7f7}
 .qlink .ico_ql04{background-position:-117px -301px}
 
 /* Investor Relations */
-.conbox.invest .ir_graph{padding: 30px 20px 6px; border-right: 1px solid #ececec; text-align: center;}
+.conbox.invest .ir_graph{padding: 30px 20px 6px; border-right: 1px solid #ececec; text-align: center; min-height:242px;}
 .conbox.invest .ic_link>div:nth-child(4), .ic_link>div:nth-child(5), .ic_link>div:nth-child(6){margin-top:32px;}
 .conbox.invest .ico{width:60px; height:60px}
 .conbox.invest .ico_ir02{background-position:-65px 0;}
@@ -58,6 +122,7 @@ main> .conbox:nth-child(even){background:#f9f7f7}
 .conbox.invest .ico_ir06{background-position:-130px -65px;}
 
 /* Corporate Social Responsibility */
+.conbox.manage .row>div{min-height:113px}
 .conbox.manage .ico{width:73px; height:73px}
 .conbox.manage .ico.icon01{background-position:0 -145px}
 .conbox.manage .ico.icon02{background-position:-83px -145px}
@@ -71,7 +136,10 @@ main> .conbox:nth-child(even){background:#f9f7f7}
 .conbox.manage .con_area a:hover h5, .conbox.manage .con_area a:focus h5{text-decoration:underline}
 
 /* Products */
+.conbox.product .row>div{margin-top:20px}
 .conbox.product .row a{display:inline-block;}
+.conbox.product .row a h3{font-size:16px; line-height:1.8em; font-weight:bold; margin-top:21px;}
+.conbox.product .row a p{margin-top:9px}
 .conbox.product .row a img{max-width:100%;}
 
 /* Blog */
