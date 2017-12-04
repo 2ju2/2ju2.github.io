@@ -56,6 +56,79 @@ $(document).ready(function(){
 	})
 });
 
+	var slideWid;
+	var imgWid; 
+	var listWid;
+	var imgCnt;
+	var dotIdx;
+	var transWid;
+	var timer;
+
+$(window).load(function(){
+	//ul 사이즈변경
+	var slideWid = $('.slide').width();
+	var imgWid = $('.slide_list li').width();
+	var listWid = $('.slide_list').width();
+	var imgCnt = $('.slide_list li').size();
+
+	imgWid = slideWid;
+	$('.slide_show').width(imgWid);
+	$('.slide_list li').width(imgWid);
+	$('.slide_list').width(imgWid * imgCnt);
+	
+	$('.dot_list li').on('click', onDotClick);
+	timer=setInterval(onSlidePlay,2000);
+	$('.slide').on('mouseenter', slide_onStop);
+	$('.slide').on('mouseleave', slide_onStart);
+});
+
+$(window).resize(function(){
+	var slideWid = $('.slide').width();
+	var imgWid = $('.slide_list li').width();
+	var listWid = $('.slide_list').width();
+	var imgCnt = $('.slide_list li').size();
+
+	//ul 사이즈변경
+	imgWid = slideWid;
+	$('.slide_show').width(imgWid);
+	$('.slide_list li').width(imgWid);
+	$('.slide_list').width(imgWid * imgCnt);
+
+});
+
+	function onDotClick(){ //도트 클릭시 슬라이드
+		imgWid = $('.slide_list li').width();
+		dotIdx = $('.dot_list li').index($(this));
+		transWid = dotIdx * imgWid;
+		
+		$('.dot_list li').removeClass('on');
+		$(this).addClass('on');
+		$('.slide_list li').removeClass('on');
+		$('.slide_list li').eq(dotIdx).addClass('on');
+		$('.slide_list').animate({'margin-left' : -transWid}, 300)
+	};
+
+	function onSlidePlay(){
+		//li.on이 li중 3번째 이하에 있는 경우
+		maxCnt = $('.slide_list li').size() - 1;
+		if($('.dot_list li.on').index() == maxCnt){ 
+			$('.dot_list li').eq(0).trigger('click');
+		}else{
+			$('.dot_list li.on').next('li').trigger('click');
+		};
+	};
+
+	function slide_onStop(){
+		clearInterval(timer);
+	};
+
+	function slide_onStart(){
+		timer=setInterval(onSlidePlay,2000);
+	};
+	
+
+
+
 function navi_onOver(){
 	$('.pc_menu > ul > li').removeClass('active');
 	$(this).addClass('active');

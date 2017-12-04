@@ -40,7 +40,7 @@ header.main_header{position:relative; z-index:10; width:100%; background:#fff}
 .pc_menu > ul > li > a{display:block; height:70px; padding:17px 29px 0 28px; font-weight: bold; font-size: 15px; letter-spacing: 0.025em;}
 .pc_menu > ul > li.active > a{color:orange}
 .subDepth{position:absolute; padding:15px 0 16px; top:70px; left:0; width:100%; background:#fff; border-top:solid 1px #ea5d4b; border-bottom:solid 1px #c7c7c7; display:none;}
-.subDepth > div{padding:15px 0; margin:0 15px;}
+.subDepth > div{padding:15px 0; margin:0 auto; width:1020px;}
 .subDepth > div > div{position:relative; height:228px; padding-left:201px;  margin:0 auto}
 .subTitle{position:absolute; left:0px; top:0; font-size:22px; color:#111; letter-spacing:-0.025em;}
 .depth_list{height:168px; margin-bottom:14px;}
@@ -94,8 +94,28 @@ header.main_header{position:relative; z-index:10; width:100%; background:#fff}
 .m_menu_list > li > ul > li > ul > li span{background-position: -138px 0; top:23px; left:30px; width:7px; height:7px; }
 
 
+/*Slide*/
+.slide{background:#333; height:569px; position:relative;}
+.slide_show{background:beige; height:100%; overflow:hidden}
+.slide_list{position:relative; top:0; left:0; height:100%;}
+.slide_list li{float:left; height:100%; background: url('../img/main/main_slide07.jpg') no-repeat; background-size:cover; background-position:center top;}
+.slide_list li:nth-child(2){background-image: url('../img/main/main_slide04.jpg')}
+.slide_list li:nth-child(3){background-image: url('../img/main/main_slide05.jpg')}
+.slide_list li a{display:block; width:100%; height:100%; color:#fff}
+.slide_list li a:hover{text-decoration:none}
+.slide_list li a div{width:100%; margin:0 auto; max-width:1020px;}
+.slide_list li a strong{display:block; font-size:54px; line-height:60px; letter-spacing:-0.01em; padding-top:161px; font-weight:lighter}
+.slide_list li a p{display:inline-block; font-size:16px; line-height:24px; border-top:solid 1px #ccc; border-bottom:solid 1px #ccc; padding:3px; letter-spacing:-0.025em; font-weight:bold; margin-top:26px;}
+.dot_list{position:absolute; bottom:20px; right:50px; }
+.dot_list li{float:left; width:20px; height:20px; border-radius:50%; background:rgba(255,255,255,0.7); border:solid 4px rgba(255,255,255,0); cursor:pointer}
+.dot_list li.on{background:none; border-color:rgba(255,255,255,1); }
+.dot_list li + li{margin-left:10px;}
+
+
+
 /* Main */
 /* ======================================================================================== */
+
 main> .conbox{padding:61px 0 70px;}
 main> .conbox:nth-child(even){background:#f9f7f7}
 .mtit_area{border-bottom:1px solid #eaeaea; padding-bottom:36px; text-align:center}
