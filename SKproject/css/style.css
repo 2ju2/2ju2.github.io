@@ -215,6 +215,10 @@ a.blog-thumb img{width:100%}
 	.conbox.map .map-menu ul{background:none;}
 	.conbox.map .map-menu ul li{display:block; width:130px; height:24px; background:#f4f4f4; margin-bottom:5px;}
 	.conbox.map .map-menu ul li a{padding:0 0 0 20px; height:24px; line-height:24px; text-align:left;}
+
+	.slide{height:223px;}
+	.slide_list li a strong{padding:22px 15px 0; font-size:27px; line-height:28px}
+	.slide_list li a p{display:none}
 }
 
 /* 가로 방향 전화기 이하 */
