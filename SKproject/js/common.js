@@ -77,7 +77,7 @@ $(window).load(function(){
 	$('.slide_list').width(imgWid * imgCnt);
 	
 	$('.dot_list li').on('click', onDotClick);
-	timer=setInterval(onSlidePlay,2000);
+	timer=setInterval(onSlidePlay,3000);
 	$('.slide').on('mouseenter', slide_onStop);
 	$('.slide').on('mouseleave', slide_onStart);
 });
@@ -93,7 +93,13 @@ $(window).resize(function(){
 	$('.slide_show').width(imgWid);
 	$('.slide_list li').width(imgWid);
 	$('.slide_list').width(imgWid * imgCnt);
-
+	
+	//슬라이드 일시중단 + 위치수정 + 슬라이드 재시작
+	slide_onStop();
+	dotIdx = $('.dot_list li').index($('.dot_list li.on'));
+	transWid = dotIdx * imgWid;
+	$('.slide_list').css({'margin-left' : -transWid})
+	slide_onStart();
 });
 
 	function onDotClick(){ //도트 클릭시 슬라이드

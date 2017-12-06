@@ -60,6 +60,7 @@ header.main_header{position:relative; z-index:10; width:100%; background:#fff}
 .etcnavi li:nth-child(2) a{background-image:url(../img/gnb/tnavi02_off.png);}
 .etcnavi li:nth-child(3) a{background-image:url(../img/gnb/tnavi03_off.png);}
 
+.mb_back, .mb_header, .mb_lang_layer, .mb_search_layer, .m_menu{display:none;}
 .mb_back{position:fixed; background:rgba(0,0,0,0.5); width:100%; height:100%; z-index:11; display:none}
 .mb_header{position: fixed; background: #fff; width: 100%; height: 50px; padding:15px; z-index: 12; border-bottom: 1px solid #ea5d4b;}
 .mb_header .mb_menu_btn, .mb_header .mb_logo, .mb_header .mb_lang, .mb_header .mb_sch{background-image:url(../img/gnb/mobile_icon.png); background-repeat:no-repeat; background-size:200px 100px;}
@@ -116,8 +117,8 @@ header.main_header{position:relative; z-index:10; width:100%; background:#fff}
 /* Main */
 /* ======================================================================================== */
 
-main> .conbox{padding:61px 0 70px;}
-main> .conbox:nth-child(even){background:#f9f7f7}
+main .content > .conbox{padding:61px 0 70px;}
+main .content > .conbox:nth-child(even){background:#f9f7f7}
 .mtit_area{border-bottom:1px solid #eaeaea; padding-bottom:36px; text-align:center}
 .mtit_area.noline{border:none;}
 .mtit_area h2{font-weight: bold; font-size: 26px; line-height: 30px; color: #333; letter-spacing: 0.025em; font-family: "Roboto", Malgun Gothic, "맑은 고딕", Dotum, "돋움", sans-serif;}
@@ -135,6 +136,7 @@ main> .conbox:nth-child(even){background:#f9f7f7}
 
 /* Investor Relations */
 .conbox.invest .ir_graph{padding: 30px 20px 6px; border-right: 1px solid #ececec; text-align: center; min-height:242px;}
+.conbox.invest .ir_graph img{max-width:100%}
 .conbox.invest .ic_link>div:nth-child(4), .ic_link>div:nth-child(5), .ic_link>div:nth-child(6){margin-top:32px;}
 .conbox.invest .ico{width:60px; height:60px}
 .conbox.invest .ico_ir02{background-position:-65px 0;}
@@ -193,9 +195,6 @@ a.blog-thumb img{width:100%}
 
 
 
-
-
-
 /*	MEDIA QUERY */
 /* ======================================================================================== */
 
@@ -204,12 +203,17 @@ a.blog-thumb img{width:100%}
 }
 
 /* 세로 방향 타블렛 ~ 가로 방향 타블렛과 데스크탑까지 */
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+	.main_header{display:none;}
+	.mb_header, .mb_lang_layer, .mb_search_layer, .m_menu{display:block;}
 }
 
 
 /* 가로 방향 전화기 ~ 세로 방향 타블렛까지 */
 @media (max-width: 767px){
+	.main_header{display:none;}
+	.mb_header, .mb_lang_layer, .mb_search_layer, .m_menu{display:block;}
+
 	.mtit_area p span{display:block;}
 	.col-sm-4+.col-sm-4{margin-top:20px;}
 	.conbox.map .map-menu ul{background:none;}
@@ -223,5 +227,8 @@ a.blog-thumb img{width:100%}
 
 /* 가로 방향 전화기 이하 */
 @media (max-width: 480px){
+	.main_header{display:none;}
+	.mb_header, .mb_lang_layer, .mb_search_layer, .m_menu{display:block;}
+
 	.conbox.manage .row>div{float:none; width:100%;}
 }
