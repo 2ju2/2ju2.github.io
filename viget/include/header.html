@@ -1,0 +1,134 @@
+    <!-- 모바일 메뉴 animate -->
+    <script type="text/javascript">
+        
+        $(document).ready(function(e) {
+            $("#m_menu_open").on("click",onMobile);
+            $("#m_menu_close").on("click",onMobileClose);
+        });
+        
+        function onMobile(){
+            $(".m_mainmenu").css("display","block");
+            $(".m_mainmenu").animate({"left":"0px"},500,"easeOutCubic");
+        };
+        
+        function onMobileClose(){
+            $(".m_mainmenu").animate({"left":"100%"},500,"easeOutCubic",function(){
+            $(".m_mainmenu").css("display","none");
+            });
+        };
+        
+        
+    </script>
+
+    
+    <!-- 비쥬얼슬라이드 함수실행 -->
+    <script type="text/javascript">
+
+        var $visualWrap;
+        var $visualShow;
+        var $visualList;
+        var $visualImg;
+        var imgWidth;
+        var imgHeight;
+        var imgNum;
+        var currentPosition;
+
+    $(window).load(function(){
+        
+        $visualWrap=$(".main_visual_wrap");
+        $visualShow=$(".visual_show");
+        $visualList=$(".visual_list");
+        $images=$(".visual_list li img");
+        imgNum=$images.size();
+        //alert(imgNum);						
+        
+        //윈도우 창이 열렸을때의 이미지, Wrap등의 크기를 정해줌
+        imgWidth=$visualShow.width();
+        $images.css("width",imgWidth);
+        imgHeight=$images.height();
+        $visualWrap.css("height", imgHeight);
+        
+        $visualList.css("width",imgWidth*imgNum);
+        //alert($visualList.width());
+        
+        $visualWrap.on("mouseover",onArrowS);
+        $visualWrap.on("mouseleave",onArrowE);
+        $("#next_btn").on("click",onNext);
+
+        });
+        
+        <!-- Arrow START/END Script -->
+        function onArrowS(){
+            $("#next_btn:not(:animated)").animate({"right":"0px"},100,"easeOutCubic");
+        };	
+        function onArrowE(){
+            $("#next_btn:not(:animated)").animate({"right":"-10%"},100,"easeOutCubic");
+        };								
+        
+        
+        <!-- 비쥬얼슬라이드 이동 Script -->
+        function onNext(){
+            //alert($("#next_btn a").text());
+            currentPosition=parseInt($visualList.css("left"));
+            if(-currentPosition<$visualList.width()-imgWidth*2){
+                //alert(currentPosition);
+                $visualList.animate({"left":currentPosition-imgWidth},300,"easeOutCubic");
+                $("#next_btn a svg").removeClass("leftArrow");
+            }else if(-currentPosition==$visualList.width()-imgWidth*2){
+                $visualList.animate({"left":currentPosition-imgWidth},300,"easeOutCubic");
+                $("#next_btn a svg").addClass("leftArrow");	
+            }
+            else{
+                $visualList.animate({"left":"0"},300,"easeOutCubic");
+                $("#next_btn a svg").removeClass("leftArrow");
+            }
+        };
+        
+        //윈도우 창이 리사이즈 됐을때의 이미지, Wrap등의 크기를 정해줌
+        $(window).resize(function(e) {
+            imgWidth=$visualShow.width();
+            $images.css("width",imgWidth);
+            imgHeight=$images.height();
+            $visualWrap.css("height", imgHeight);
+            
+            $visualList.css("width",imgWidth*imgNum);	
+                                    
+        });				
+        
+    
+    </script>
+
+
+	<header class="menu_header">
+    	<h1><span class="logo"><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/index.html"><img src="include/img/logo.png" alt="viget"></a></span></h1>
+    	<!-- S : PC 메인메뉴 -->
+        <div class="pc_mainmenu">
+        	<nav>
+                <ul class="pc_mainmenu_list">
+                    <li><a href="http://dbfpzk666.dothome.co.kr/juhee/work/work.html">Work</a></li>
+                    <li><a href="http://dbfpzk666.dothome.co.kr/juhee/services/services.html">Services</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/common-search-lookup-glyph-20.png" alt="find"></a></li>
+                </ul>
+            </nav>
+        </div>
+    	<!-- E : PC 메인메뉴 --> 
+        <!-- S : Mobile 메인메뉴 -->
+        <a id="m_menu_open" href="#"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-16.png" alt="메뉴오픈"></a>
+        <div class="m_mainmenu">
+        	<nav>
+            	<ul class="m_mainmenu_list">
+                    <li><a href="http://dbfpzk666.dothome.co.kr/juhee/work/work.html">Work</a></li>
+                    <li><a href="http://dbfpzk666.dothome.co.kr/juhee/services/services.html">Services</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/common-search-lookup-glyph-20.png" alt="find"></a></li>
+                </ul>
+            </nav>
+            <a id="m_menu_close" href="#"><img src="https://cdn2.iconfinder.com/data/icons/ios-tab-bar/25/Cross_Cricle-20.png" alt="닫기"></a>
+        </div>
+        <!-- E : Mobile 메인메뉴 -->               
+    </header>    
