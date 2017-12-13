@@ -4,172 +4,51 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 		<title>Viget</title>
-		<link rel="stylesheet" href="include/css/reset.css" type="text/css">
-		<link rel="stylesheet" href="include/css/style.css" type="text/css">
+		<link rel="stylesheet" href="../include/css/reset.css" type="text/css">
+		<link rel="stylesheet" href="../include/css/style.css" type="text/css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>	
-        <!-- 모바일 메뉴 animate -->
-        <script type="text/javascript">
-			
-			$(document).ready(function(e) {
-            	$("#m_menu_open").on("click",onMobile);
-				$("#m_menu_close").on("click",onMobileClose);
-            });
-			
-			function onMobile(){
-				$(".m_mainmenu").css("display","block");
-				$(".m_mainmenu").animate({"left":"0px"},500,"easeOutCubic");
-			};
-			
-			function onMobileClose(){
-				$(".m_mainmenu").animate({"left":"100%"},500,"easeOutCubic",function(){
-				$(".m_mainmenu").css("display","none");
-				});
-			};
-			
-			
-		</script>
-
-        
-        <!-- 비쥬얼슬라이드 함수실행 -->
-		<script type="text/javascript">
-
-			var $visualWrap;
-			var $visualShow;
-			var $visualList;
-			var $visualImg;
-			var imgWidth;
-			var imgHeight;
-			var imgNum;
-			var currentPosition;
-
-		$(window).load(function(){
-			
-			$visualWrap=$(".main_visual_wrap");
-			$visualShow=$(".visual_show");
-			$visualList=$(".visual_list");
-			$images=$(".visual_list li img");
-			imgNum=$images.size();
-			
-			//윈도우 창이 열렸을때의 이미지, Wrap등의 크기를 정해줌
-			imgWidth=$visualShow.width();
-			$images.css("width",imgWidth);
-			imgHeight=$images.height();
-			$visualWrap.css("height", imgHeight);
-			
-			$visualList.css("width",imgWidth*imgNum);
-			
-			$visualWrap.on("mouseover",onArrowS);
-			$visualWrap.on("mouseleave",onArrowE);
-			$("#next_btn").on("click",onNext);
-
-			});
-			
-			<!-- Arrow START/END Script -->
-			function onArrowS(){
-				$("#next_btn:not(:animated)").animate({"right":"0px"},100,"easeOutCubic");
-			};	
-			function onArrowE(){
-				$("#next_btn:not(:animated)").animate({"right":"-10%"},100,"easeOutCubic");
-			};								
-			
-			
-			<!-- 비쥬얼슬라이드 이동 Script -->
-			function onNext(){
-				currentPosition=parseInt($visualList.css("left"));
-				if(-currentPosition<$visualList.width()-imgWidth*2){
-					$visualList.animate({"left":currentPosition-imgWidth},300,"easeOutCubic");
-					$("#next_btn a svg").removeClass("leftArrow");
-				}else if(-currentPosition==$visualList.width()-imgWidth*2){
-					$visualList.animate({"left":currentPosition-imgWidth},300,"easeOutCubic");
-					$("#next_btn a svg").addClass("leftArrow");	
-				}
-				else{
-					$visualList.animate({"left":"0"},300,"easeOutCubic");
-					$("#next_btn a svg").removeClass("leftArrow");
-				}
-			};
-			
-			//윈도우 창이 리사이즈 됐을때의 이미지, Wrap등의 크기를 정해줌
-			$(window).resize(function(e) {
-                imgWidth=$visualShow.width();
-				$images.css("width",imgWidth);
-				imgHeight=$images.height();
-				$visualWrap.css("height", imgHeight);
-				$visualList.css("width",imgWidth*imgNum);	
-			});				
-		</script>
-
-		<script type="text/javascript">
-		//함수 실행
-		$(function(){
-			$(".imgbox_list li").onSize();
-		});
-					
-		//함수 선언
-		$.fn.onSize = function(){
-			return this.each(function(){
-			
-			var $obj = $(this);
-			var $boxBtn = $obj.find(".box_btn");
-			var $boxTxt = $obj.find(".box_txt");
-			
-				$obj.on("mouseover",onLarge);
-				$obj.on("mouseleave",onSmall);
-				
-				// 마우스 오버시 이미지 확대
-				function onLarge(){
-					$obj.animate({"background-size":"133%"},300,"easeOutCubic");
-					$boxTxt.animate({"top":"55%"},300,"easeOutCubic");
-					$boxBtn.animate({"bottom":"55px"},300,"easeOutCubic");
-				};
-				
-				//마우스 리브시 이미지 축소
-				function onSmall(){
-					$obj.animate({"background-size":"130%"},300,"easeOutCubic");
-					$boxTxt.animate({"top":"56%"},300,"easeOutCubic");
-					$boxBtn.animate({"bottom":"50px"},300,"easeOutCubic"); 
-				};						
-			});
-		};
-		
-	</script>
+        <script src="../include/js/mobile_menu.js"></script> 
+		<script src="../include/js/main.js"></script> 
+	<!--[if lte IE 8]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
 	</head>
 	<body>
 	<header class="menu_header">
-    	<h1><span class="logo"><a href="http://dbfpzk666.dothome.co.kr/viget/index.html"><img src="include/img/logo.png" alt="viget"></a></span></h1>
+    	<h1><a class="logo" href="../main/index.html"><img src="../include/img/logo.png" alt="viget"></a></h1>
     	<!-- S : PC 메인메뉴 -->
         <div class="pc_mainmenu">
         	<nav>
                 <ul class="pc_mainmenu_list">
-                    <li><a href="/viget/work/work.html">Work</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/services/services.html">Services</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/articles/articles.html">Articles</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/careers/careers.html">Careers</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/qna/qna.html">Q&amp;A</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/contact/contact.html">Contact</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/board">Admin</a></li>
-					<li><a href="#"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/common-search-lookup-glyph-20.png" alt="find"></a></li>
+                    <li><a href="../work/work.html">Work</a></li>
+                    <li><a href="../services/services.html">Services</a></li>
+                    <li><a href="../viget/articles/articles.html">Articles</a></li>
+                    <li><a href="../careers/careers.html">Careers</a></li>
+                    <li><a href="../qna/qna.html">Q&amp;A</a></li>
+                    <li><a href="../contact/contact.html">Contact</a></li>
+                    <li><a href="../board" style="color:#ccc">Admin</a></li>
+					<li><a href="#"><img src="../include/img/search.png" alt="search"></a></li>
                 </ul>
             </nav>
         </div>
     	<!-- E : PC 메인메뉴 --> 
         <!-- S : Mobile 메인메뉴 -->
-        <a id="m_menu_open" href="#"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-16.png" alt="메뉴오픈"></a>
+        <a id="m_menu_open" href="#"><img src="../include/img/menu.png" alt="메뉴오픈"></a>
         <div class="m_mainmenu">
         	<nav>
             	<ul class="m_mainmenu_list">
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/work/work.html">Work</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/services/services.html">Services</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/articles/articles.html">Articles</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/careers/careers.html">Careers</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/qna/qna.html">Q&amp;A</a></li>
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/board">Board</a></li>                    
-                    <li><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/contact/contact.html">Contact</a></li>
-                    <li><a href="#"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/common-search-lookup-glyph-20.png" alt="find"></a></li>
+                    <li><a href="../work/work.html">Work</a></li>
+                    <li><a href="../services/services.html">Services</a></li>
+                    <li><a href="../viget/articles/articles.html">Articles</a></li>
+                    <li><a href="../careers/careers.html">Careers</a></li>
+                    <li><a href="../qna/qna.html">Q&amp;A</a></li>
+                    <li><a href="../contact/contact.html">Contact</a></li>
+                    <li><a href="../board" style="color:#ccc">Admin</a></li>
+                    <li><a href="#"><img src="../include/img/search.png" alt="search"></a></li>
                 </ul>
             </nav>
-            <a id="m_menu_close" href="#"><img src="include/img/cross_circle.png" alt="닫기"></a>
+            <a id="m_menu_close" href="#"><img src="../include/img/cross_circle.png" alt="닫기"></a>
         </div>
         <!-- E : Mobile 메인메뉴 -->               
     </header>
@@ -180,25 +59,25 @@
 			<div class="visual_show">
         		<ul class="visual_list bxslider">
             		<li>
-                        <img src="include/img/slider_1.jpg" alt="gorilla">
+                        <img src="../include/img/slider_1.jpg" alt="gorilla">
                         <p class="visual_title">A Bold Stand<br>for Wildlife</p>
                         <p class="visual_eye"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 30 22"><path d="M15 5.774c-2.8 0-5.078 2.343-5.078 5.225s2.278 5.226 5.078 5.226c2.801 0 5.078-2.344 5.078-5.226s-2.277-5.225-5.078-5.225zm0 8.761c-1.885 0-3.418-1.587-3.418-3.536s1.533-3.535 3.418-3.535c.218 0 .431.026.638.067-.608.302-1.033.937-1.033 1.676 0 1.029.817 1.867 1.821 1.867.836 0 1.533-.584 1.746-1.372.156.402.246.838.246 1.297 0 1.949-1.533 3.536-3.418 3.536zm14.439-3.756c-2.986-6.036-8.517-9.787-14.439-9.787-5.921 0-11.453 3.751-14.438 9.787-.068.139-.068.302 0 .44 2.985 6.037 8.517 9.789 14.438 9.789 5.922 0 11.453-3.752 14.439-9.788.069-.139.069-.302 0-.441zm-14.439 8.241c-4.866 0-9.431-3.066-11.958-8.02 2.527-4.954 7.092-8.021 11.958-8.021 4.867 0 9.432 3.067 11.959 8.021-2.527 4.953-7.092 8.02-11.959 8.02z"></path></svg></p>
                         <p class="visual_link">WILDLIFE CONSERVATION SOCIETY <spna>WCS.ORG<span/></p>                  
                 	</li>
                     <li>
-                    	<img src="include/img/slider_2.jpg" alt="fight">
+                    	<img src="../include/img/slider_2.jpg" alt="fight">
                         <p class="visual_title">Strong Is the<br>New Skinny</p>
                         <p class="visual_eye"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 30 22"><path d="M15 5.774c-2.8 0-5.078 2.343-5.078 5.225s2.278 5.226 5.078 5.226c2.801 0 5.078-2.344 5.078-5.226s-2.277-5.225-5.078-5.225zm0 8.761c-1.885 0-3.418-1.587-3.418-3.536s1.533-3.535 3.418-3.535c.218 0 .431.026.638.067-.608.302-1.033.937-1.033 1.676 0 1.029.817 1.867 1.821 1.867.836 0 1.533-.584 1.746-1.372.156.402.246.838.246 1.297 0 1.949-1.533 3.536-3.418 3.536zm14.439-3.756c-2.986-6.036-8.517-9.787-14.439-9.787-5.921 0-11.453 3.751-14.438 9.787-.068.139-.068.302 0 .44 2.985 6.037 8.517 9.789 14.438 9.789 5.922 0 11.453-3.752 14.439-9.788.069-.139.069-.302 0-.441zm-14.439 8.241c-4.866 0-9.431-3.066-11.958-8.02 2.527-4.954 7.092-8.021 11.958-8.021 4.867 0 9.432 3.067 11.959 8.021-2.527 4.953-7.092 8.02-11.959 8.02z"></path></svg></p>
                         <p class="visual_link">Dick's Sporting Goods<spna>Women's Fitness<span/></p>   
                     </li>
                     <li>
-                    	<img src="include/img/slider_3.jpg" alt="flower">
+                    	<img src="../include/img/slider_3.jpg" alt="flower">
                         <p class="visual_title">A Bold Stand<br>for Wildlife</p>
                         <p class="visual_eye"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 30 22"><path d="M15 5.774c-2.8 0-5.078 2.343-5.078 5.225s2.278 5.226 5.078 5.226c2.801 0 5.078-2.344 5.078-5.226s-2.277-5.225-5.078-5.225zm0 8.761c-1.885 0-3.418-1.587-3.418-3.536s1.533-3.535 3.418-3.535c.218 0 .431.026.638.067-.608.302-1.033.937-1.033 1.676 0 1.029.817 1.867 1.821 1.867.836 0 1.533-.584 1.746-1.372.156.402.246.838.246 1.297 0 1.949-1.533 3.536-3.418 3.536zm14.439-3.756c-2.986-6.036-8.517-9.787-14.439-9.787-5.921 0-11.453 3.751-14.438 9.787-.068.139-.068.302 0 .44 2.985 6.037 8.517 9.789 14.438 9.789 5.922 0 11.453-3.752 14.439-9.788.069-.139.069-.302 0-.441zm-14.439 8.241c-4.866 0-9.431-3.066-11.958-8.02 2.527-4.954 7.092-8.021 11.958-8.021 4.867 0 9.432 3.067 11.959 8.021-2.527 4.953-7.092 8.02-11.959 8.02z"></path></svg></p>
                         <p class="visual_link">NBC Sports<spna>Kentucky Derby Social Brooch<span/></p>   
                     </li>
                     <li>
-                    	<img  src="include/img/slider_4.jpg" alt="vote">
+                    	<img  src="../include/img/slider_4.jpg" alt="vote">
                         <p class="visual_title">Enter the<br>Political Arena</p>
                         <p class="visual_eye"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 30 22"><path d="M15 5.774c-2.8 0-5.078 2.343-5.078 5.225s2.278 5.226 5.078 5.226c2.801 0 5.078-2.344 5.078-5.226s-2.277-5.225-5.078-5.225zm0 8.761c-1.885 0-3.418-1.587-3.418-3.536s1.533-3.535 3.418-3.535c.218 0 .431.026.638.067-.608.302-1.033.937-1.033 1.676 0 1.029.817 1.867 1.821 1.867.836 0 1.533-.584 1.746-1.372.156.402.246.838.246 1.297 0 1.949-1.533 3.536-3.418 3.536zm14.439-3.756c-2.986-6.036-8.517-9.787-14.439-9.787-5.921 0-11.453 3.751-14.438 9.787-.068.139-.068.302 0 .44 2.985 6.037 8.517 9.789 14.438 9.789 5.922 0 11.453-3.752 14.439-9.788.069-.139.069-.302 0-.441zm-14.439 8.241c-4.866 0-9.431-3.066-11.958-8.02 2.527-4.954 7.092-8.021 11.958-8.021 4.867 0 9.432 3.067 11.959 8.021-2.527 4.953-7.092 8.02-11.959 8.02z"></path></svg></p>
                         <p class="visual_link">Politico <spna>2016 Election Coverage<span/></p>   
@@ -231,7 +110,7 @@
                         <li class="img_box" id="box_01">
                             <a href="#" class="box_ver1">
                                 <div class="box_win">
-                                    <img src="include/img/box_img1.jpg"><br>
+                                    <img src="../include/img/box_img1.jpg"><br>
                                 </div>
                                 <div class="box_wave"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#white-waves"></use></svg></div>
                                 <span class="box_txt">E3 2016: Launching the Official Quake Champions and Dishonored 2 Sites</span>
@@ -243,7 +122,7 @@
                         <li class="img_box" id="box_03">
                             <a href="#" class="box_ver1">
                                 <div class="box_win">
-                                    <img src="include/img/box_img3.jpg"><br>
+                                    <img src="../include/img/box_img3.jpg"><br>
                                 </div>
                                 <div class="box_wave"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#white-waves"></use></svg></div>
                                 <span class="box_txt">Going Off-the-Shelf: WordPress vs. Craft vs. Drupal vs. Shopify</span>
@@ -253,7 +132,7 @@
                         <li class="img_box_ver2" id="box_05">
                             <a href="#" class="box_ver2">
                                 <div class="box_win">
-                                    <img src="include/img/box_img5.jpg"><br>
+                                    <img src="../include/img/box_img5.jpg"><br>
                                 </div>
                                 <div class="box_wave"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#white-waves"></use></svg></div>
                                 <span class="box_txt">Want to learn React Native? Start here.</span>
@@ -266,7 +145,7 @@
                         <li class="img_box_ver3" id="box_10">
                             <a href="#" class="box_ver3">
                                 <div class="box_win">
-                                    <img src="include/img/box_img10.jpg"><br>
+                                    <img src="../include/img/box_img10.jpg"><br>
                                 </div>
                                 <div class="box_wave"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#white-waves"></use></svg></div>
                                 <span class="box_txt">5 Ways to Save Time During Research</span>                    
@@ -275,7 +154,7 @@
                         <li class="img_box_ver3" id="box_11">
                             <a href="#" class="box_ver3">
                                 <div class="box_win">
-                                    <img src="include/img/box_img11.jpg"><br>
+                                    <img src="../include/img/box_img11.jpg"><br>
                                 </div>
                                 <div class="box_wave"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#white-waves"></use></svg></div>
                                 <span class="box_txt">Why Redesign Your Website and How to Prep</span>
@@ -317,7 +196,7 @@
         <article class="footer_con">
             <div class="location_wrap">
                 <h3>Office Locations</h3>
-                <div class="footer_logo"><img src="include/img/empathy.png"></div>  
+                <div class="footer_logo"><img src="../include/img/empathy.png"></div>  
                 <div class="location_txt">
                     <div class="title"><span class="strong"><a href="#" class="dotted_link">hello@viget.com</a> :</span> 703.891.0670</div>
                     <ul class="location_list">
@@ -327,7 +206,7 @@
                     </ul>
                     <div class="news_wrap">
                 		<h3>Viget Newsletter</h3>
-                		<div class="footer_logo"><img src="include/img/empathy.png"></div>
+                		<div class="footer_logo"><img src="../include/img/empathy.png"></div>
                 		<div class="news_txt">
                     		<p class="title"><span class="strong">The Viget Newsletter</span></p>
                     		<p class="txt">A curated periodical featuring thoughts, opinions, and tools for building a better digital world.</p>

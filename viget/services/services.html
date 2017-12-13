@@ -4,69 +4,50 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">        
 		<title>[viget]service 서브페이지</title>
-		<link rel="stylesheet" href="/viget/common/css/init.css" type="text/css">
-		<link rel="stylesheet" href="/viget/juhee/include/css/style.css" type="text/css">
-		<link rel="stylesheet" href="/viget/juhee/include/css/reset.css" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<link rel="stylesheet" href="../include/css/reset.css" type="text/css">
+		<link rel="stylesheet" href="../include/css/style.css" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-		
-        <!-- 모바일 메뉴 animate -->
-        <script type="text/javascript">
-			
-			$(document).ready(function(e) {
-            	$("#m_menu_open").on("click",onMobile);
-				$("#m_menu_close").on("click",onMobileClose);
-            });
-			
-			function onMobile(){
-				$(".m_mainmenu").css("display","block");
-				$(".m_mainmenu").animate({"left":"0px"},500,"easeOutCubic");
-			};
-			
-			function onMobileClose(){
-				$(".m_mainmenu").animate({"left":"100%"},500,"easeOutCubic",function(){
-				$(".m_mainmenu").css("display","none");
-				});
-			};
-		</script>
-        
-
+		<script src="../include/js/mobile_menu.js"></script>
+		<!--[if lte IE 8]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
 	</head>
 	<body>
 	<header class="menu_header">
-    	<h1><span class="logo"><a href="http://dbfpzk666.dothome.co.kr/viget/juhee/index.html"><img src="../include/img/logo.png" alt="viget"></a></span></h1>
+    	<h1><a class="logo" href="../main/index.html"><img src="../include/img/logo.png" alt="viget"></a></h1>
     	<!-- S : PC 메인메뉴 -->
         <div class="pc_mainmenu">
         	<nav>
                 <ul class="pc_mainmenu_list">
                     <li><a href="../work/work.html">Work</a></li>
-                    <li><a class="selected" href="../services/services.html">Services</a></li>
-                    <li><a href="../articles/articles.html">Articles</a></li>
+                    <li><a href="../services/services.html">Services</a></li>
+                    <li><a href="../viget/articles/articles.html">Articles</a></li>
                     <li><a href="../careers/careers.html">Careers</a></li>
                     <li><a href="../qna/qna.html">Q&amp;A</a></li>
-                    <li><a href="../contact/contact.html">Contact</a></li>                
-                    <li><a class="admin_menu" href="../board" >Admin</a></li>                                                            
-                    <li><a href="#"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/common-search-lookup-glyph-20.png" alt="find"></a></li>
+                    <li><a href="../contact/contact.html">Contact</a></li>
+                    <li><a href="../board" style="color:#ccc">Admin</a></li>
+					<li><a href="#"><img src="../include/img/search.png" alt="search"></a></li>
                 </ul>
             </nav>
         </div>
     	<!-- E : PC 메인메뉴 --> 
         <!-- S : Mobile 메인메뉴 -->
-        <a id="m_menu_open" href="#"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-16.png" alt="메뉴오픈"></a>
+        <a id="m_menu_open" href="#"><img src="../include/img/menu.png" alt="메뉴오픈"></a>
         <div class="m_mainmenu">
         	<nav>
             	<ul class="m_mainmenu_list">
                     <li><a href="../work/work.html">Work</a></li>
-                    <li><a class="selected" href="../services/services.html">Services</a></li>
-                    <li><a href="../articles/articles.html">Articles</a></li>
+                    <li><a href="../services/services.html">Services</a></li>
+                    <li><a href="../viget/articles/articles.html">Articles</a></li>
                     <li><a href="../careers/careers.html">Careers</a></li>
                     <li><a href="../qna/qna.html">Q&amp;A</a></li>
-                    <li><a href="../contact/contact.html">Contact</a></li>                
-                    <li><a class="admin_menu" href="../board" >Admin</a></li>                                                            
-                    <li><a href="#"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/common-search-lookup-glyph-20.png" alt="find"></a></li>
+                    <li><a href="../contact/contact.html">Contact</a></li>
+                    <li><a href="../board" style="color:#ccc">Admin</a></li>
+                    <li><a href="#"><img src="../include/img/search.png" alt="search"></a></li>
                 </ul>
             </nav>
-            <a id="m_menu_close" href="#"><img src="https://cdn2.iconfinder.com/data/icons/ios-tab-bar/25/Cross_Cricle-20.png" alt="닫기"></a>
+            <a id="m_menu_close" href="#"><img src="../include/img/cross_circle.png" alt="닫기"></a>
         </div>
         <!-- E : Mobile 메인메뉴 -->               
     </header>

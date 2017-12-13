@@ -6,7 +6,9 @@ ul, ol{list-style:none}
 a, a:hover, a:visited{text-decoration:none; color:#333;}
 header.menu_header{width:100%; height:80px; }
 header.menu_header h1{height:40px; padding:20px; z-index:2;}
+header.menu_header h1 img{height:40px;}
 article{padding-top:30px; padding-bottom:30px;}
+.mb0{margin-bottom:0px!important}
 
 /*==================메인=====================*/
 /* 헤더 */
@@ -18,11 +20,9 @@ a.admin_menu{color:#1395ba;}
 
 .m_menu_open{display:none; float:right; margin-right:20px; margin-top:30px;}
 .m_mainmenu{display:none; width:100%; height:100%; background:#e1e1e1; border:5px solid #fff; position:fixed; top:0; left:100%; z-index:1; box-sizing:border-box;}
-.m_mainmenu nav{}
 .m_mainmenu_list{text-align:center; margin-top:100px;}
 .m_mainmenu_list li{font-size:25px; padding-bottom:25px;}
 .m_mainmenu_list li a:after{content:""; width:30px; height:1px; border-bottom:1px solid #b4b4b4; padding-top:10px; margin:0 auto; display:block;}
-/*.m_mainmenu_list li a{ border-bottom:1px solid #666;}*/
 
 #m_menu_open{float:right; margin-top:30px; margin-right:20px; display:none;}
 #m_menu_close{position:absolute; top:30px; right:20px; z-index:1;}
@@ -281,14 +281,6 @@ main.articles{background:#10a585;}
 .photo_list li{width:25%; float:left;}
 .photo_list li img{display:block; width:100%; height:auto;}
 .photo_list li:first-child{width:50%;}
-
-.circle_grid{text-align: center; position:relative; margin:110px 0px 220px 0px;}
-.circle_grid .box_btn{background:#1395ba; margin:50px auto; text-transform:uppercase; display:inline-block; }
-.circle_grid .circle_title{padding:20px; font-size:25px; color:#1395ba;}
-.circle_grid .circle_txt{font-size:16px; padding:20px}
-.circle_con{position:relative;}
-.circle_back{position:absolute; top:50%; left:50%; margin:-325px 0 0 -325px; width:650px; height:650px; border-radius:50%; background:rgba(0,102,204,0.3);}
-.circle_back::before{position:absolute; top:50%; left:50%; margin:-150px 0 0 -150px; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,1);}
 
 #benefit_list li{line-height:1.5em;}
 #benefit_list>li::before{content:""; width:calc(100% - 80px); height:1px; display:block; border-top:1px solid #d3d3d3; margin:0 auto;}
